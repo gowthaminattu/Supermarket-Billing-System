@@ -1,16 +1,84 @@
-# React + Vite
+#  Supermarket Billing System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A simple and efficient billing system that simulates a real supermarket checkout.
+> ##  About
 
-Currently, two official plugins are available:
+This project automates the billing process by handling product selection, price calculation, and bill generation in a simple and user-friendly way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+##  Key Highlights
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ *Fast Billing Process*
+ *Automatic Price Calculation*
+ *10% Discount on orders above ₹1000*
+ *5% GST applied*
+ *Basic Inventory Handling*
+ *Displays Date & Time of Purchase*
 
-## Expanding the ESLint configuration
+---
+---
+## supermarket-billing-system/
+│
+├── index.html              
+├── README.md              
+│
+├── css/
+│   └── style.css         
+│
+├── js/
+│   ├── app.js             
+│   ├── products.js        
+│   └── cart.js           
+│
+├── assets/
+│   ├── images/           
+│   └── icons/
+│
+├── data/
+│   └── sample-data.json   
+│
+└── utils/
+    └── helper.js        
+    ---
+##  Core Functions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Add and manage products
+* Add items to cart
+* Generate final bill instantly
+* Avoid manual calculation errors
+
+---
+
+##  Billing Logic
+
+* **Discount:** Applied when total > ₹1000
+* **GST:** 5% added to the final amount
+* **Final Amount:** *(Total - Discount) + GST*
+
+---
+## Technologies Used
+**Frontend**: HTML, CSS, JavaScript (or Java Console if applicable)
+**Backend**: (Optional) Node.js / Java
+**Database**: Local Storage / MySQL
+
+---
+
+##  Purpose
+
+* Learn real-world billing system logic
+* Improve programming and problem-solving skills
+
+---
+
+##  Author
+GOWTHAMI N
+
+
+---
+
+##  Note
+This project is created as a practical implementation of basic programming concepts, focusing on real-world billing system functionality in a simplified manner.
+
+
+
