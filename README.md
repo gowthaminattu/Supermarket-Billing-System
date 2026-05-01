@@ -2,7 +2,7 @@
 
 > A simple and efficient billing system that simulates a real supermarket checkout.
 
->  ##  About
+ ##  About
 
 This project automates the billing process by handling product selection, price calculation, and bill generation in a simple and user-friendly way.
 
@@ -18,7 +18,7 @@ This project automates the billing process by handling product selection, price 
  *Displays Date & Time of Purchase*
 
 ---
----
+
 ## supermarket-billing-system
 │
 ├── index.html              
