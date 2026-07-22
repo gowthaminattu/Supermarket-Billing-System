@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+dist/
+build/
+coverage/
+*.db
+*.log
+.DS_Store
+client_old/
+v1_backup/
