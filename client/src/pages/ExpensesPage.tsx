@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 export default function ExpensesPage() {
   const [expenses, setExpenses] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+
   const [branches, setBranches] = useState<any[]>([]);
   const [formData, setFormData] = useState({ amount: '', description: '', category: 'OTHER', branchId: '' });
 
@@ -23,8 +23,6 @@ export default function ExpensesPage() {
       setBranches(branchRes.data);
     } catch (error) {
       toast.error('Failed to load data');
-    } finally {
-      setLoading(false);
     }
   };
 

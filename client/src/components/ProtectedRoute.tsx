@@ -11,7 +11,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ allowedRoles }) => {
 
   if (!isAuthenticated) return <Navigate to="/login" replace />;
   if (allowedRoles && user && !allowedRoles.includes(user.role)) {
-    if (user.role === 'CUSTOMER') return <Navigate to="/customer/dashboard" replace />;
+    if ((user.role as string) === 'CUSTOMER') return <Navigate to="/customer/dashboard" replace />;
     if (user.role === 'CASHIER') return <Navigate to="/customers" replace />;
     return <Navigate to="/dashboard" replace />;
   }

@@ -141,8 +141,8 @@ const POSPage: React.FC = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (user?.role === 'CUSTOMER') {
-      setCustomer({ id: user.id, name: user.name, phone: user.phone || '' });
+    if (user && (user.role as string) === 'CUSTOMER') {
+      setCustomer({ id: user.id, name: user.name, phone: (user as any).phone || '', loyaltyPoints: 0 });
     }
   }, [user]);
   
@@ -368,7 +368,7 @@ const POSPage: React.FC = () => {
             {items.length > 0 && <span className="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">{items.length}</span>}
           </div>
           <div className="flex items-center gap-2">
-            {user?.role !== 'CUSTOMER' && (
+            {(user?.role as string) !== 'CUSTOMER' && (
               <button onClick={fetchHeldBills} title="Held Bills" className="text-slate-400 hover:text-amber-400 transition-colors"><Pause size={16} /></button>
             )}
             <button onClick={clearCart} title="Clear Cart" className="text-slate-400 hover:text-red-400 transition-colors"><Trash2 size={16} /></button>
@@ -381,7 +381,7 @@ const POSPage: React.FC = () => {
             <div className="flex items-center gap-2">
               <User size={14} className="text-blue-400" />
               <span className="text-white text-sm flex-1">{customer.name}</span>
-              {user?.role !== 'CUSTOMER' && (
+              {(user?.role as string) !== 'CUSTOMER' && (
                 <button onClick={() => setCustomer(null)} className="text-slate-500 hover:text-red-400"><X size={14} /></button>
               )}
             </div>
@@ -487,7 +487,7 @@ const POSPage: React.FC = () => {
 
         {/* Actions */}
         <div className="px-4 pb-4 flex gap-2">
-          {user?.role !== 'CUSTOMER' && (
+          {(user?.role as string) !== 'CUSTOMER' && (
             <button onClick={holdBill} disabled={items.length === 0}
               className="flex-1 flex items-center justify-center gap-2 border border-slate-700 hover:border-amber-600 text-slate-300 hover:text-amber-400 py-3 rounded-xl text-sm font-medium transition-all disabled:opacity-50">
               <Pause size={16} /> Hold
@@ -495,7 +495,7 @@ const POSPage: React.FC = () => {
           )}
           <button onClick={() => setShowPayment(true)} disabled={items.length === 0 || loading}
             className="flex-[2] flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white py-3 rounded-xl text-sm font-bold transition-colors">
-            {loading ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <><Receipt size={16} /> Pay ₹{total.toFixed(2)}</>}
+            {loading ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <><ReceiptIcon size={16} /> Pay ₹{total.toFixed(2)}</>}
           </button>
         </div>
 
@@ -512,7 +512,7 @@ const POSPage: React.FC = () => {
       {lastSale && (
         <Receipt 
           invoiceNo={lastSale.invoiceNo}
-          items={lastSale.items?.map((i: any) => ({ name: i.product?.name, quantity: i.quantity, price: i.price, total: i.total }))}
+          items={lastSale.items?.map((i: any) => ({ productId: i.productId || '', sku: '', name: i.product?.name || 'Item', quantity: i.quantity, price: i.price, total: i.total, stock: 0 }))}
           subtotal={lastSale.subtotal}
           tax={lastSale.tax}
           discount={lastSale.discount}

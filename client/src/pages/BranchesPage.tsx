@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import api from '../lib/api';
-import { MapPin, Plus, Trash2, Edit } from 'lucide-react';
+import { MapPin, Plus, Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function BranchesPage() {
   const [branches, setBranches] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+
   const [formData, setFormData] = useState({ name: '', address: '', phone: '' });
 
   useEffect(() => {
@@ -18,8 +18,6 @@ export default function BranchesPage() {
       setBranches(res.data);
     } catch (error) {
       toast.error('Failed to load branches');
-    } finally {
-      setLoading(false);
     }
   };
 

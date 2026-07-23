@@ -18,7 +18,7 @@ interface ReceiptProps {
 }
 
 const Receipt = React.forwardRef<HTMLDivElement, ReceiptProps>(({
-  invoiceNo, items = [], subtotal = 0, tax = 0, discount = 0, total = 0, amountPaid = 0, change = 0, payments = [],
+  invoiceNo, items = [], subtotal = 0, tax = 0, discount = 0, total = 0, change = 0, payments = [],
   cashierName = 'Staff', customerName, date = new Date(), branchName = 'Main Branch'
 }, ref) => {
   return (

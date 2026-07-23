@@ -101,10 +101,11 @@ export interface Coupon {
 }
 
 export interface DashboardData {
-  today: { revenue: number; orders: number };
+  today: { revenue: number; orders: number; expenses: number; netProfit: number };
   totals: { orders: number; customers: number; products: number; lowStock: number; inventoryValue: number };
   recentSales: Sale[];
   topProducts: { productId: string; _sum: { quantity: number; total: number }; product?: { name: string; sku: string } }[];
   salesByPayment: { paymentMethod: string; _count: { id: number }; _sum: { total: number } }[];
   weeklySales: { date: string; revenue: number; orders: number }[];
+  staffPerformance: any[];
 }

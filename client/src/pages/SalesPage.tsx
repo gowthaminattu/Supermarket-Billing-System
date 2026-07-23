@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../lib/api';
 import type { Sale } from '../types';
 import toast from 'react-hot-toast';
-import { Search, RefreshCw, Eye, X, Printer, MapPin, User as UserIcon } from 'lucide-react';
+import { Search, RefreshCw, Eye, X, Printer } from 'lucide-react';
 import Receipt from '../components/Receipt';
 import { useAuth } from '../context/AuthContext';
 
@@ -214,7 +214,7 @@ const SalesPage: React.FC = () => {
       {selectedSale && (
         <Receipt 
           invoiceNo={selectedSale.invoiceNo}
-          items={selectedSale.items?.map((i: any) => ({ name: i.product?.name || 'Item', quantity: i.quantity, price: i.price, total: i.total }))}
+          items={selectedSale.items?.map((i: any) => ({ productId: i.productId || '', sku: '', name: i.product?.name || 'Item', quantity: i.quantity, price: i.price, total: i.total, stock: 0 }))}
           subtotal={selectedSale.subtotal}
           tax={selectedSale.tax}
           discount={selectedSale.discount}
