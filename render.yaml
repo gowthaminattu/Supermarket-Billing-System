@@ -9,8 +9,9 @@ services:
       - key: DATABASE_URL
         value: "file:./supermarket.db"
 
-  - type: static_site
+  - type: web
     name: supermarket-frontend
+    env: static
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
