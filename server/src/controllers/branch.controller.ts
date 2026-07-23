@@ -39,7 +39,7 @@ export const updateBranch = async (req: Request, res: Response): Promise<void> =
     const { name, address, phone } = req.body;
     
     const branch = await prisma.branch.update({
-      where: { id },
+      where: { id: id as string },
       data: { name, address, phone }
     });
     
@@ -53,7 +53,7 @@ export const updateBranch = async (req: Request, res: Response): Promise<void> =
 export const deleteBranch = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    await prisma.branch.delete({ where: { id } });
+    await prisma.branch.delete({ where: { id: id as string } });
     res.json({ message: 'Branch deleted successfully' });
   } catch (error) {
     console.error('Error deleting branch:', error);

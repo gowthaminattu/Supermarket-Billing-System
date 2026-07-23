@@ -100,7 +100,7 @@ export const createSale = async (req: AuthRequest, res: Response): Promise<void>
   }
 };
 
-export const getSales = async (req: Request, res: Response): Promise<void> => {
+export const getSales = async (req: AuthRequest, res: Response): Promise<void> => {
   try {
     const from = req.query.from as string | undefined;
     const to = req.query.to as string | undefined;

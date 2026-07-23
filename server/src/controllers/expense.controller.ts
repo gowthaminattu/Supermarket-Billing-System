@@ -57,7 +57,7 @@ export const createExpense = async (req: Request, res: Response): Promise<void> 
 export const deleteExpense = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    await prisma.expense.delete({ where: { id } });
+    await prisma.expense.delete({ where: { id: id as string } });
     res.json({ message: 'Expense deleted successfully' });
   } catch (error) {
     console.error('Error deleting expense:', error);
