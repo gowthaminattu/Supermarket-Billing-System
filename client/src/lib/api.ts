@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Production backend: https://supermarket-backend-sjxg.onrender.com
 const rawUrl = import.meta.env.VITE_API_URL || 'https://supermarket-backend-sjxg.onrender.com/api';
 const baseURL = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
 const api = axios.create({ baseURL });
