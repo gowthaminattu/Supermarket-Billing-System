@@ -246,26 +246,6 @@ This project helped strengthen my understanding of:
 
 ---
 
-# Screenshots
-
-```
-screenshots/
-
-├── dashboard.png
-
-├── product-management.png
-
-├── billing.png
-
-├── invoice.png
-
-└── database.png
-```
-
-Add screenshots of the application's interface to demonstrate its functionality.
-
----
-
 # Repository Information
 
 | Category             | Details                     |
@@ -279,17 +259,16 @@ Add screenshots of the application's interface to demonstrate its functionality.
 
 ---
 
-# Developed By
-
-## Gowthami N
----
-
 # Acknowledgement
 
 This project reflects my practical understanding of Java application development, database connectivity, and software engineering principles. It demonstrates my ability to design and implement a real-world desktop application by integrating programming concepts with database management techniques.
 
 I developed this project to strengthen my problem-solving skills, improve my understanding of Object-Oriented Programming, and gain hands-on experience in building maintainable and scalable software solutions.
 
+---
+# Developed By
+
+## GOWTHAMI N
 ---
 
 **Thank you for visiting this repository.**
